@@ -1,0 +1,20 @@
+{
+  "id": "bug-investigator",
+  "name": "Bug Investigator",
+  "version": "0.1.0",
+  "description": "面向软件故障调查与根因分析的技能，通过证据收集、假设验证和因果分析定位问题，并在修改代码之前形成结构化诊断结论。",
+  "type": "skill",
+  "author": "Keying Dev",
+  "license": "MIT",
+  "entry": "SKILL.md",
+  "references": [
+    "references/guide.md"
+  ],
+  "tags": [
+    "故障调查",
+    "问题诊断",
+    "根因分析",
+    "软件工程",
+    "调试"
+  ]
+}

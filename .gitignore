@@ -1,0 +1,47 @@
+# macOS
+.DS_Store
+ ._*
+ .Trash
+
+# Node / pnpm / npm
+node_modules/
+.pnpm-store/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build artifacts
+dist/
+build/
+*.tsbuildinfo
+
+# Editors / IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Coverage / test
+coverage/
+.nyc_output/
+*.lcov
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Temporary / runtime
+tmp/
+temp/
+*.log
+logs/

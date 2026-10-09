@@ -1,0 +1,43 @@
+{
+  "name": "keying-agent-skills",
+  "version": "0.1.0",
+  "description": "柯影智航（KoyingPilot / DeepSeek Harness）Agent Skill 库 —— 可复用的领域工作流模板集合。",
+  "author": "Keying Dev",
+  "publisher": "Koying",
+  "license": "MIT",
+  "type": "skill-library",
+  "skills": [
+    {
+      "id": "project-analyst",
+      "name": "Project Analyst",
+      "displayName": "项目分析",
+      "version": "0.1.1",
+      "description": "系统化分析软件项目或代码仓库，帮助理解项目用途、技术栈、目录结构、程序入口、系统架构、核心模块、依赖关系、构建运行方式、测试部署体系以及关键风险和待确认事项。",
+      "type": "skill",
+      "path": "./skills/development/skill-project-analyst",
+      "entry": "SKILL.md",
+      "tags": ["项目分析", "架构", "技术栈", "代码审查"]
+    },
+    {
+      "id": "gh-cli",
+      "name": "GitHub CLI Skill",
+      "version": "0.1.0",
+      "description": "面向 GitHub 仓库管理与开发协作的命令行技能，通过 GitHub CLI（gh）完成仓库、Issue、Pull Request、Release 和 GitHub Actions 的查询、管理与自动化操作，并提供权限检查、执行确认和结果验证机制。",
+      "type": "skill",
+      "path": "./skills/development/skill-gh-cli",
+      "entry": "SKILL.md",
+      "tags": ["GitHub", "GitHub CLI", "仓库管理", "Issue", "Pull Request", "Release", "GitHub Actions", "开发协作", "自动化"]
+    },
+    {
+      "id": "bug-investigator",
+      "name": "Bug Investigator",
+      "displayName": "故障调查技能",
+      "version": "0.1.0",
+      "description": "面向软件故障调查与根因分析的技能，通过证据收集、假设验证和因果分析定位问题，并在修改代码之前形成结构化诊断结论。",
+      "type": "skill",
+      "path": "./skills/development/skill-bug-investigator",
+      "entry": "SKILL.md",
+      "tags": ["故障调查", "问题诊断", "根因分析", "软件工程", "调试"]
+    }
+  ]
+}
