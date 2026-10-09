@@ -9,7 +9,7 @@
 | Skill | 标识 | 版本 | 用途 |
 |---|---|---|---|
 | [Project Analyst](./skills/development/skill-project-analyst) | `project-analyst` | v0.1.1 | 系统化分析陌生软件项目：技术栈、架构、入口、依赖、构建/测试/部署、风险与未知事项 |
-| [GitHub CLI](./skills/development/skill-gh-cli) | `gh-cli` | v0.1.0 | 通过官方 `gh` CLI 安全操作 GitHub 仓库、Issue、PR、Release、Actions |
+| [GitHub CLI](./skills/development/skill-gh-cli) | `gh-cli` | v0.1.1 | 通过官方 `gh` CLI 安全操作 GitHub 仓库、Issue、PR、Release、Actions |
 | [Bug Investigator](./skills/development/skill-bug-investigator) | `bug-investigator` | v0.1.0 | 软件故障根因分析：症状 → 触发条件 → 根因的证据链分级 |
 
 ## 安装

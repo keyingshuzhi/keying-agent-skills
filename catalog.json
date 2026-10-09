@@ -21,7 +21,7 @@
     {
       "id": "gh-cli",
       "name": "GitHub CLI Skill",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "description": "面向 GitHub 仓库管理与开发协作的命令行技能，通过 GitHub CLI（gh）完成仓库、Issue、Pull Request、Release 和 GitHub Actions 的查询、管理与自动化操作，并提供权限检查、执行确认和结果验证机制。",
       "type": "skill",
       "path": "./skills/development/skill-gh-cli",
