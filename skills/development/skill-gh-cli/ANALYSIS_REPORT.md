@@ -1,36 +1,86 @@
-# GitHub CLI Skill — Analysis Report
+# GitHub CLI 技能 — 分析报告（v0.1.1）
 
-## Objective
-Provide a reusable agent Skill for common GitHub CLI operations with explicit scope resolution, safe mutation boundaries, and verifiable results.
+## 目标
 
-## Scope
-- In scope: authentication checks, repositories, issues, PRs, releases, Actions, read-only API queries, troubleshooting.
-- Out of scope: replacing `git`, managing GitHub billing, guaranteeing API permissions, handling secrets directly, arbitrary deployment scripts.
+为 DeepSeek Harness（KoyingPilot）Agent 提供一套安全、一致、可自愈的 `gh` CLI 操作技能，覆盖仓库、Issue、Pull Request、Release 和 GitHub Actions 的查询、管理与自动化操作，并在修改前形成结构化决策。
 
-## Design decisions
-1. `SKILL.md` is the entry point and contains activation cues and a concise execution policy.
-2. `references/guide.md` holds commands and recipes to keep the main Skill lightweight.
-3. `extension.json` is **a project-local metadata example**, not an official universal Skill extension specification. Consumers should adapt it to their host application.
-4. Read-before-write and post-write verification are required to reduce mistakes.
-5. Repo scope is explicit (`-R OWNER/REPO`) to prevent accidental operations on the wrong project.
+## 版本
 
-## Risks and mitigations
-| Risk | Mitigation |
-| --- | --- |
-| Unauthorized publication or deletion | Require explicit approval for high-impact remote writes. |
-| Credentials leakage | Never echo tokens or raw secrets. |
-| Wrong target repository | Resolve repo before action and pass `-R`. |
-| Unreliable commands due to CLI changes | Consult `gh <command> --help` and official manual. |
-| CI logs contain sensitive data | Redact logs before sharing. |
-| Licensing confusion | Skill MIT license covers only this Skill, not third-party `gh` or user repositories. |
+- 当前版本：v0.1.1（基于 v0.1.0 升级）
 
-## Acceptance checks
-- [ ] `SKILL.md` frontmatter parses.
-- [ ] `references/guide.md` exists and is linked.
-- [ ] `extension.json` is valid JSON.
-- [ ] LICENSE and README are present.
-- [ ] Commands distinguish read-only from remote writes.
-- [ ] Examples never contain real tokens.
+---
 
-## Limitations
-Command examples are templates and have not been executed against the user's GitHub account. GitHub CLI behavior may vary by installed version, account permissions, and repository policy.
+## 本次升级清单（v0.1.0 → v0.1.1）
+
+| 编号 | 升级项 | 类型 | 说明 |
+|---|---|---|---|
+| #1 | 全文本地化（中文） | 体验 | SKILL.md、extension.json 改为中文，命令示例保留英文 |
+| #2 | `gh` 工作区可用性探测 | 核心修复 | 找不到时按 PATH / 常见目录 / 环境变量顺序排查并引导，不自行安装 |
+| #3 | 仓库上下文自动解析 | 功能性 | `-R` → `git remote` → 登录账户 → 请用户确认 |
+| #4 | 认证状态检查 + token 环境变量检测 | 功能性 | 区分「未安装 / 未登录 / 有 env token」三种状态 |
+| #5 | 非交互模式强制 | 功能性 | 写命令默认加 `--confirm`、`--draft` 等，防止挂起 |
+| #6 | 速率限制与分页处理 | 功能性 | `gh api rate_limit`、`--paginate`、`--limit`、403/429 处理 |
+| #7 | 输出解析技巧 | 体验性 | `--json` / `--jq` 字段速查、彩色转纯文本 |
+| #8 | `git` / `gh` 职责决策树 | 体验性 | 明确命令边界，减少误用 |
+| #9 | 高危操作影响预估模板 | 安全性 | 执行前说明影响 + 回滚方式 |
+| #10 | 场景化工作流模板 | 体验性 | Issue→PR 闭环、发布前检查、PR 批量状态 |
+| #11 | 版本兼容性说明 | 功能性 | 常见 flag 变迁提示 |
+| #12 | 增强故障排查表 | 体验性 | 增加「gh 命令找不到」条目与完整流程 |
+
+---
+
+## 设计决策
+
+1. `SKILL.md` 仍是技能入口，包含触发条件、前置检查（gh 探测 + 认证 + 上下文解析）与执行策略；`references/guide.md` 承载详细命令、配方与参考资料，保持主文件轻量。
+2. **先探测，后执行**：任何 `gh` 操作前必须先确认命令可用与认证状态；找不到 `gh` 时只引导用户安装，绝不自动安装（安全边界）。
+3. **上下文解析有明确优先级**，无法解析时宁可停止等待用户确认，也不猜测目标仓库。
+4. **非交互优先**：agent 环境没有交互式终端，所有写命令默认使用非交互参数。
+5. **只读倾向**：读操作默认安全；写操作必须预估影响并获用户批准。
+6. `extension.json` 仍是项目本地元数据示例，非官方 universal 规范；宿主应用可按需适配。
+7. 中文本地化以提升中文 Agent 的理解与匹配度，命令与参数保持英文原文（命令行不可本地化）。
+
+---
+
+## 风险矩阵
+
+| 风险 | 影响 | 缓解措施 |
+|---|---|---|
+| gh 未安装或未在 PATH | agent 无法执行任何操作 | 工作区探测 + 清晰安装指引，等待用户确认 |
+| 未授权发布/删除 | 不可逆的远程数据丢失 | 高危清单 + 影响预估模板 + 用户显式批准 |
+| 凭据泄露 | 账户被滥用 | 绝不 echo token；env token 仅检查存在性 |
+| 错误目标仓库 | 操作到 unintended repo | 上下文解析优先级 + 强制 `-R OWNER/REPO` |
+| 命令因版本变化失效 | 执行失败或行为偏差 | 版本兼容性说明 + 建议先 `--help` |
+| agent 环境被交互式 prompt 挂起 | 任务卡死 | 强制非交互参数 |
+| API 速率限制 | 请求被拒、数据遗漏 | `--paginate`、`--limit`、403/429 处理 |
+| CI 日志含凭证 | 凭证泄露 | 脱敏后分享，审查 `--log-failed` 输出 |
+| 许可证混淆 | MIT 仅覆盖本技能，不覆盖 gh / 用户仓库 | 在文档中明确说明 |
+
+---
+
+## 验收清单
+
+- [ ] `SKILL.md` Frontmatter 解析正确，中文 `description` 清晰。
+- [ ] `references/guide.md` 存在且与 SKILL.md 联动。
+- [ ] `extension.json` 是合法 JSON（`version: 0.1.1`）。
+- [ ] LICENSE 与 README 存在。
+- [ ] 命令区分只读与远程写，高风险操作有批准门禁。
+- [ ] 示例命令不含真实 token。
+- [ ] 新增功能已覆盖：gh 探测、上下文解析、认证/env token、非交互、速率限制/分页、输出解析、git/gh 边界、影响预估、工作流模板、版本兼容、故障排查。
+- [ ] 全文中文本地化完成，命令保持英文。
+- [ ] `git diff` 对工作区干净，无临时文件。
+
+---
+
+## 待验证事项
+
+- `gh` 命令示例在不同版本下的 flag 行为（应以 `gh --help` 实测为准）。
+- 本技能未包含真实执行环境；示例命令仅供参考，未经过实际账户验证。
+- 环境变量 token 检测在实际 sandbox 环境中的可用性。
+
+---
+
+## 下一步建议
+
+- 根据实际使用反馈补充更多场景化工作流（如批量关闭已合并 PR、仓库迁移等）。
+- 若宿主平台支持，可增加 `gh` 版本自动检测并据此调整推荐命令。
+- 考虑将「影响预估」固化为执行写操作前的固定回答模板。
