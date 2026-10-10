@@ -38,6 +38,61 @@
       "path": "./skills/development/skill-bug-investigator",
       "entry": "SKILL.md",
       "tags": ["故障调查", "问题诊断", "根因分析", "软件工程", "调试"]
+    },
+    {
+      "id": "code-reviewer",
+      "name": "Code Reviewer",
+      "displayName": "代码审查技能",
+      "version": "0.1.0",
+      "description": "面向代码文件、Git Diff 和 Pull Request 的证据驱动代码审查，识别正确性、安全性、可靠性、性能与维护性缺陷，给出风险分级、证据状态及最小修复建议。",
+      "type": "skill",
+      "path": "./skills/development/skill-code-reviewer",
+      "entry": "SKILL.md",
+      "tags": ["代码审查", "质量保证", "静态分析", "PR审查", "缺陷检测"]
+    },
+    {
+      "id": "code-refactor",
+      "name": "Code Refactor",
+      "displayName": "代码重构技能",
+      "version": "0.1.0",
+      "description": "面向代码结构改进和技术债治理的重构技能，通过行为基线、影响分析、小步变更和回归验证降低维护成本，并明确区分重构与功能变更。",
+      "type": "skill",
+      "path": "./skills/development/skill-code-refactor",
+      "entry": "SKILL.md",
+      "tags": ["代码重构", "重构", "技术债", "代码结构"]
+    },
+    {
+      "id": "dependency-auditor",
+      "name": "Dependency Auditor",
+      "displayName": "依赖审计技能",
+      "version": "0.1.0",
+      "description": "面向软件依赖和供应链风险的审计技能，核对 manifest、lockfile、实际安装版本和构建环境，识别兼容性、漏洞证据、许可证和来源可信度风险。",
+      "type": "skill",
+      "path": "./skills/development/skill-dependency-auditor",
+      "entry": "SKILL.md",
+      "tags": ["依赖审计", "供应链", "安全审计", "漏洞检测"]
+    },
+    {
+      "id": "architecture-reviewer",
+      "name": "Architecture Reviewer",
+      "displayName": "架构审查技能",
+      "version": "0.1.0",
+      "description": "面向软件系统架构与设计方案的证据驱动审查，评估模块边界、依赖方向、演进性、可靠性、数据流、可运维性及非功能需求权衡。",
+      "type": "skill",
+      "path": "./skills/development/skill-architecture-reviewer",
+      "entry": "SKILL.md",
+      "tags": ["架构审查", "系统架构", "设计方案", "性能评估"]
+    },
+    {
+      "id": "test-engineer",
+      "name": "Test Engineer",
+      "displayName": "软件测试工程师",
+      "version": "0.1.0",
+      "description": "面向需求、代码变更和故障修复的测试工程技能，建立可追溯测试目标、测试用例、安全执行计划、结果证据及剩余风险报告。",
+      "type": "skill",
+      "path": "./skills/development/skill-test-engineer",
+      "entry": "SKILL.md",
+      "tags": ["测试工程", "测试设计", "测试执行", "验证报告"]
     }
   ]
 }

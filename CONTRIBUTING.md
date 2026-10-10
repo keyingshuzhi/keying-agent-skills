@@ -9,7 +9,12 @@ keying-agent-skills/
 ├── skills/development/          # 技能开发目录
 │   ├── skill-project-analyst/
 │   ├── skill-gh-cli/
-│   └── skill-bug-investigator/
+│   ├── skill-bug-investigator/
+│   ├── skill-code-reviewer/
+│   ├── skill-code-refactor/
+│   ├── skill-dependency-auditor/
+│   ├── skill-architecture-reviewer/
+│   └── skill-test-engineer/
 ├── catalog.json                 # 技能目录索引
 ├── README.md
 ├── LICENSE

@@ -1,0 +1,17 @@
+{
+  "name": "code-refactor",
+  "displayName": "Code Refactor",
+  "displayNameZh": "代码重构技能",
+  "version": "0.1.0",
+  "description": "面向代码结构改进和技术债治理的重构技能，通过行为基线、影响分析、小步变更和回归验证降低维护成本，并明确区分重构与功能变更。",
+  "type": "skill",
+  "author": "Keying Dev",
+  "publisher": "Koying",
+  "license": "MIT",
+  "skills": [
+    {
+      "name": "code-refactor",
+      "path": "./SKILL.md"
+    }
+  ]
+}

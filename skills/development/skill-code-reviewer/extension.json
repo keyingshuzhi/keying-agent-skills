@@ -1,0 +1,26 @@
+{
+  "id": "code-reviewer",
+  "name": "code-reviewer",
+  "displayName": "Code Reviewer",
+  "displayNameZh": "代码审查技能",
+  "version": "0.1.0",
+  "description": "面向代码文件、Git Diff 和 Pull Request 的证据驱动代码审查，识别正确性、安全性、可靠性、性能与维护性缺陷，给出风险分级、证据状态及最小修复建议。",
+  "type": "skill",
+  "author": "Keying Dev",
+  "publisher": "Koying",
+  "license": "MIT",
+  "entry": "SKILL.md",
+  "references": [
+    "references/guide.md"
+  ],
+  "tags": [
+    "代码审查",
+    "质量保证",
+    "静态分析",
+    "PR审查",
+    "缺陷检测"
+  ],
+  "skills": [
+    {"name": "code-reviewer", "path": "./SKILL.md"}
+  ]
+}

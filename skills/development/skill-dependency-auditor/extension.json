@@ -1,0 +1,17 @@
+{
+  "name": "dependency-auditor",
+  "displayName": "Dependency Auditor",
+  "displayNameZh": "依赖审计技能",
+  "version": "0.1.0",
+  "description": "面向软件依赖和供应链风险的审计技能，核对 manifest、lockfile、实际安装版本和构建环境，识别兼容性、漏洞证据、许可证和来源可信度风险。",
+  "type": "skill",
+  "author": "Keying Dev",
+  "publisher": "Koying",
+  "license": "MIT",
+  "skills": [
+    {
+      "name": "dependency-auditor",
+      "path": "./SKILL.md"
+    }
+  ]
+}

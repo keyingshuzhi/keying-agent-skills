@@ -1,0 +1,17 @@
+{
+  "name": "test-engineer",
+  "displayName": "Test Engineer",
+  "displayNameZh": "软件测试工程师",
+  "version": "0.1.0",
+  "description": "面向需求、代码变更和故障修复的测试工程技能，建立可追溯测试目标、测试用例、安全执行计划、结果证据及剩余风险报告。",
+  "type": "skill",
+  "author": "Keying Dev",
+  "publisher": "Koying",
+  "license": "MIT",
+  "skills": [
+    {
+      "name": "test-engineer",
+      "path": "./SKILL.md"
+    }
+  ]
+}
