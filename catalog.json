@@ -93,6 +93,17 @@
       "path": "./skills/development/skill-test-engineer",
       "entry": "SKILL.md",
       "tags": ["测试工程", "测试设计", "测试执行", "验证报告"]
+    },
+    {
+      "id": "workspace-environment-manager",
+      "name": "Workspace Environment Manager",
+      "displayName": "工作区环境管理器",
+      "version": "0.1.0",
+      "description": "Diagnose and prepare isolated project environments in restricted AI-agent workspaces. Reuse accessible host tools before considering installation; distinguish missing tools from PATH, permission, sandbox and execution failures; keep project dependencies and generated state inside the workspace; use vetted network mirrors only when needed.",
+      "type": "skill",
+      "path": "./skills/development/skill-workspace-environment-manager",
+      "entry": "SKILL.md",
+      "tags": ["工作区环境", "环境管理", "依赖隔离", "网络镜像"]
     }
   ]
 }

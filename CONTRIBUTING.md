@@ -14,7 +14,10 @@ keying-agent-skills/
 │   ├── skill-code-refactor/
 │   ├── skill-dependency-auditor/
 │   ├── skill-architecture-reviewer/
-│   └── skill-test-engineer/
+│   ├── skill-test-engineer/
+│   └── skill-workspace-environment-manager/
+├── skills/data-analysis/        # 数据分析技能目录
+│   └── skill-plot-generator/
 ├── catalog.json                 # 技能目录索引
 ├── README.md
 ├── LICENSE
@@ -23,7 +26,7 @@ keying-agent-skills/
 
 ## 创建新 Skill
 
-1. 在 `skills/development/` 下创建新目录，命名格式 `skill-<kebab-case-name>`。
+1. 在 `skills/development/` 下创建新目录，命名格式 `skill-<kebab-case-name>`（或放至其他已有类别如 `skills/data-analysis/`）。
 2. 参照现有 Skill 的结构创建以下文件：
 
 | 文件 | 说明 |
@@ -35,7 +38,7 @@ keying-agent-skills/
 | `README.md` | 使用文档与示例。 |
 | `LICENSE` | MIT 许可。 |
 
-3. 在根目录 `catalog.json` 的 `skills` 数组中添加新条目。
+3. 在根目录 `catalog.json` 的 `skills` 数组中添加新条目（仅适用于希望被 DSH Host 自动识别的 Skill；如仅作内部使用或演示，可省略此步）。
 
 ## Skill 结构约定
 
@@ -79,6 +82,9 @@ Frontmatter 之后是技能正文，包含：
 ```bash
 # 校验所有 extension.json
 for f in skills/development/skill-*/extension.json; do
+  python3 -c "import json; json.load(open('$f'))" && echo "OK: $f"
+done
+for f in skills/data-analysis/skill-*/extension.json; do
   python3 -c "import json; json.load(open('$f'))" && echo "OK: $f"
 done
 

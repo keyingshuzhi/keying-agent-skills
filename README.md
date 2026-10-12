@@ -16,6 +16,7 @@
 | [Dependency Auditor](./skills/development/skill-dependency-auditor) | `dependency-auditor` | v0.1.0 | 面向软件依赖和供应链风险的审计技能，核对 manifest、lockfile、实际安装版本和构建环境，识别兼容性、漏洞证据、许可证和来源可信度风险。 |
 | [Architecture Reviewer](./skills/development/skill-architecture-reviewer) | `architecture-reviewer` | v0.1.0 | 面向软件系统架构与设计方案的证据驱动审查，评估模块边界、依赖方向、演进性、可靠性、数据流、可运维性及非功能需求权衡。 |
 | [Test Engineer](./skills/development/skill-test-engineer) | `test-engineer` | v0.1.0 | 面向需求、代码变更和故障修复的测试工程技能，建立可追溯测试目标、测试用例、安全执行计划、结果证据及剩余风险报告。 |
+| [Workspace Environment Manager](./skills/development/skill-workspace-environment-manager) | `workspace-environment-manager` | v0.1.0 | Diagnose and prepare isolated project environments in restricted AI-agent workspaces. Reuse accessible host tools before considering installation; distinguish missing tools from PATH, permission, sandbox and execution failures; keep project dependencies and generated state inside the workspace; use vetted network mirrors only when needed. |
 
 ## 安装
 
