@@ -20,6 +20,9 @@
 | [学位论文格式化](./skills/academic/skill-academic-paper-formatter) | `academic-paper-formatter` | v0.1.1 | 优先适配柯影智航，同时兼容其他支持 MCP 与 Agent Skill 的智能体。依据学校提供的 Word 模板分析、格式化并校验中国本科、硕士和博士学位论文。 |
 | [绘图生成器](./skills/data-analysis/skill-plot-generator) | `plot-generator` | v0.1.0 | 使用 MCP Research-Draw 工具生成统计图表、领域专用图、3D 图和地图可视化。提供可用图表列表、参数说明以及按数据渲染图表的完整指引。 |
 
+> [视频格式转换](./skills/media/skill-video-format-converter)（`video-format-converter`）已注册到 `catalog.json`，见上表。命令示例与端到端流程均用 FFmpeg 9.0.2 在 `data-demo/` 的真实 1080p 源上实测确认，共三轮：19 项 E2E 场景（`ffprobe` 缺失 / 可用两种宿主注入状态，结论零漂移）、md5/ffprobe 复核实录（4 种场景判别表 + 5 个复核用例），见其 `ANALYSIS_REPORT.md` 第 8、9 节。Agent 行为评估用例 VD-E01..E08 已有 7 PASS / 1 PARTIAL：E01/E02/E03/E05/E07 有完整运行时证据，E06/E08 在真实对话中已验证，仅 E04（工具缺失）因当前会话环境已注入 `ffprobe` 而无法在本轮复现。
+
+
 ## 安装
 
 每个 Skill 目录可直接复制到 KoyingPilot 的 Skill 目录中使用。详细安装步骤见各 Skill 的 `README.md`。
@@ -46,7 +49,7 @@ skill-name/
 
 ## 工作流串联
 
-三个 Skill 可组合成完整的软件工程工作流：
+多个 Skill 可组合成完整的软件工程工作流：
 
 ```text
 Project Analyst        → 理解项目（这个项目是怎么工作的？）
@@ -57,6 +60,16 @@ Coding Agent           → 实施修复（怎么把它修好？）
         ↓
 Tests                  → 验证结果
 ```
+
+## 仓库自检
+
+提交前运行一致性校验（只读，不修改文件）：
+
+```bash
+python3 scripts/validate_skills.py
+```
+
+脚本检查约定文件是否齐全、`name` 与目录名是否一致、`extension.json` 与 `catalog.json` 的字段与路径是否有效、Markdown 相对链接是否存在、是否残留备份文件。仓库目前**没有**自动化测试与 CI，该脚本只做静态检查。
 
 ## License
 

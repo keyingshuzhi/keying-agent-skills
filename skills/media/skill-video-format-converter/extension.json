@@ -1,0 +1,26 @@
+{
+  "name": "video-format-converter",
+  "displayName": "Video Format Converter",
+  "displayNameZh": "视频格式转换",
+  "version": "0.1.0",
+  "description": "基于 FFmpeg 工具，实现视频文件的格式转换、编码、质量优化和元信息处理，支持视频文件的批量处理和参数定制。提供视频格式转换的完整工作流程指导，包括源视频检查、格式选择、转换参数配置、转换执行和结果验证。",
+  "type": "skill",
+  "author": "Keying Dev",
+  "publisher": "Koying",
+  "license": "MIT",
+  "entry": "SKILL.md",
+  "references": [
+    "references/guide.md"
+  ],
+  "permissions": [
+    "skill:instructions",
+    "skill:read-extension-resources"
+  ],
+  "tags": [
+    "视频",
+    "FFmpeg",
+    "格式转换",
+    "转码",
+    "批处理"
+  ]
+}
