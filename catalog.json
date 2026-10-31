@@ -115,6 +115,16 @@
       "path": "./skills/data-analysis/skill-plot-generator",
       "entry": "SKILL.md",
       "tags": ["绘图", "可视化", "MCP", "Research-Draw"]
+    },
+    {
+      "id": "academic-paper-formatter",
+      "name": "学位论文格式化",
+      "version": "0.1.1",
+      "description": "优先适配柯影智航，同时兼容其他支持 MCP 与 Agent Skill 的智能体。依据学校提供的 Word 模板分析、格式化并校验中国本科、硕士和博士学位论文。",
+      "type": "skill",
+      "path": "./skills/academic/skill-academic-paper-formatter",
+      "entry": "SKILL.md",
+      "tags": ["学术写作", "柯影智航", "学位论文", "论文格式", "DOCX", "MCP", "引文"]
     }
   ]
 }

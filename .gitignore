@@ -45,3 +45,9 @@ tmp/
 temp/
 *.log
 logs/
+
+# DSH local cache
+.dsh/
+
+# Backup files
+*.bak

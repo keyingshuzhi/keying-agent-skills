@@ -15,7 +15,9 @@ keying-agent-skills/
 │   ├── skill-dependency-auditor/
 │   ├── skill-architecture-reviewer/
 │   ├── skill-test-engineer/
-│   └── skill-workspace-environment-manager/
+│   ├── skill-workspace-environment-manager/
+├── skills/academic/             # 学术写作技能目录
+│   └── skill-academic-paper-formatter/
 ├── skills/data-analysis/        # 数据分析技能目录
 │   ├── skill-plot-generator/
 ├── catalog.json                 # 技能目录索引
