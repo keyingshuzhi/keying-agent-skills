@@ -104,6 +104,17 @@
       "path": "./skills/development/skill-workspace-environment-manager",
       "entry": "SKILL.md",
       "tags": ["工作区环境", "环境管理", "依赖隔离", "网络镜像"]
+    },
+    {
+      "id": "plot-generator",
+      "name": "Plot Generator",
+      "displayName": "绘图生成器",
+      "version": "0.1.0",
+      "description": "A skill for generating statistical, domain-specific, 3D, and map visualizations using the MCP Research-Draw tool. Provides guidance on listing available plots, understanding required parameters, and rendering plots with appropriate data.",
+      "type": "skill",
+      "path": "./skills/data-analysis/skill-plot-generator",
+      "entry": "SKILL.md",
+      "tags": ["绘图", "可视化", "MCP", "Research-Draw"]
     }
   ]
 }

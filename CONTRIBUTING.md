@@ -17,7 +17,7 @@ keying-agent-skills/
 │   ├── skill-test-engineer/
 │   └── skill-workspace-environment-manager/
 ├── skills/data-analysis/        # 数据分析技能目录
-│   └── skill-plot-generator/
+│   ├── skill-plot-generator/
 ├── catalog.json                 # 技能目录索引
 ├── README.md
 ├── LICENSE
