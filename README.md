@@ -8,17 +8,17 @@
 
 | Skill | 标识 | 版本 | 用途 |
 |---|---|---|---|
-| [Project Analyst](./skills/development/skill-project-analyst) | `project-analyst` | v0.1.1 | 系统化分析陌生软件项目：技术栈、架构、入口、依赖、构建/测试/部署、风险与未知事项 |
-| [GitHub CLI](./skills/development/skill-gh-cli) | `gh-cli` | v0.1.1 | 通过官方 `gh` CLI 安全操作 GitHub 仓库、Issue、PR、Release、Actions |
-| [Bug Investigator](./skills/development/skill-bug-investigator) | `bug-investigator` | v0.1.0 | 软件故障根因分析：症状 → 触发条件 → 根因的证据链分级 |
-| [Code Reviewer](./skills/development/skill-code-reviewer) | `code-reviewer` | v0.1.0 | 面向代码文件、Git Diff 与 Pull Request 的证据驱动代码审查技能；检查正确性、安全性、可靠性、性能与维护性，定位可操作缺陷，给出风险分级、验证状态和最小修复建议。 |
-| [Code Refactor](./skills/development/skill-code-refactor) | `code-refactor` | v0.1.0 | 面向代码结构改进和技术债治理的重构技能，通过行为基线、影响分析、小步变更和回归验证降低维护成本，并明确区分重构与功能变更。 |
-| [Dependency Auditor](./skills/development/skill-dependency-auditor) | `dependency-auditor` | v0.1.0 | 面向软件依赖和供应链风险的审计技能，核对 manifest、lockfile、实际安装版本和构建环境，识别兼容性、漏洞证据、许可证和来源可信度风险。 |
-| [Architecture Reviewer](./skills/development/skill-architecture-reviewer) | `architecture-reviewer` | v0.1.0 | 面向软件系统架构与设计方案的证据驱动审查，评估模块边界、依赖方向、演进性、可靠性、数据流、可运维性及非功能需求权衡。 |
-| [Test Engineer](./skills/development/skill-test-engineer) | `test-engineer` | v0.1.0 | 面向需求、代码变更和故障修复的测试工程技能，建立可追溯测试目标、测试用例、安全执行计划、结果证据及剩余风险报告。 |
-| [Workspace Environment Manager](./skills/development/skill-workspace-environment-manager) | `workspace-environment-manager` | v0.1.0 | 诊断并准备受限 AI 代理工作区中的隔离项目环境。在考虑安装前优先复用可访问的主机工具；区分 PATH 缺失、权限不足、沙箱限制和执行失败；将项目依赖和生成状态保留在工作区内；仅在必要时使用经过验证的网络镜像。 |
+| [项目分析](./skills/development/skill-project-analyst) | `project-analyst` | v0.1.1 | 系统化分析陌生软件项目：技术栈、架构、入口、依赖、构建/测试/部署、风险与未知事项 |
+| [GitHub 命令行工具](./skills/development/skill-gh-cli) | `gh-cli` | v0.1.1 | 通过官方 `gh` CLI 安全操作 GitHub 仓库、Issue、PR、Release、Actions |
+| [故障调查技能](./skills/development/skill-bug-investigator) | `bug-investigator` | v0.1.0 | 软件故障根因分析：症状 → 触发条件 → 根因的证据链分级 |
+| [代码审查技能](./skills/development/skill-code-reviewer) | `code-reviewer` | v0.1.0 | 面向代码文件、Git Diff 与 Pull Request 的证据驱动代码审查技能；检查正确性、安全性、可靠性、性能与维护性，定位可操作缺陷，给出风险分级、验证状态和最小修复建议。 |
+| [代码重构技能](./skills/development/skill-code-refactor) | `code-refactor` | v0.1.0 | 面向代码结构改进和技术债治理的重构技能，通过行为基线、影响分析、小步变更和回归验证降低维护成本，并明确区分重构与功能变更。 |
+| [依赖审计技能](./skills/development/skill-dependency-auditor) | `dependency-auditor` | v0.1.0 | 面向软件依赖和供应链风险的审计技能，核对 manifest、lockfile、实际安装版本和构建环境，识别兼容性、漏洞证据、许可证和来源可信度风险。 |
+| [架构审查技能](./skills/development/skill-architecture-reviewer) | `architecture-reviewer` | v0.1.0 | 面向软件系统架构与设计方案的证据驱动审查，评估模块边界、依赖方向、演进性、可靠性、数据流、可运维性及非功能需求权衡。 |
+| [软件测试工程师](./skills/development/skill-test-engineer) | `test-engineer` | v0.1.0 | 面向需求、代码变更和故障修复的测试工程技能，建立可追溯测试目标、测试用例、安全执行计划、结果证据及剩余风险报告。 |
+| [工作区环境管理器](./skills/development/skill-workspace-environment-manager) | `workspace-environment-manager` | v0.1.0 | 诊断并准备受限 AI 代理工作区中的隔离项目环境。在考虑安装前优先复用可访问的主机工具；区分 PATH 缺失、权限不足、沙箱限制和执行失败；将项目依赖和生成状态保留在工作区内；仅在必要时使用经过验证的网络镜像。 |
 | [学位论文格式化](./skills/academic/skill-academic-paper-formatter) | `academic-paper-formatter` | v0.1.1 | 优先适配柯影智航，同时兼容其他支持 MCP 与 Agent Skill 的智能体。依据学校提供的 Word 模板分析、格式化并校验中国本科、硕士和博士学位论文。 |
-| [Plot Generator](./skills/data-analysis/skill-plot-generator) | `plot-generator` | v0.1.0 | 使用 MCP Research-Draw 工具生成统计图表、领域专用图、3D 图和地图可视化。提供可用图表列表、参数说明以及按数据渲染图表的完整指引。 |
+| [绘图生成器](./skills/data-analysis/skill-plot-generator) | `plot-generator` | v0.1.0 | 使用 MCP Research-Draw 工具生成统计图表、领域专用图、3D 图和地图可视化。提供可用图表列表、参数说明以及按数据渲染图表的完整指引。 |
 
 ## 安装
 
